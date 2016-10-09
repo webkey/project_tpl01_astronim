@@ -100,6 +100,8 @@ mark {
 	font-style: inherit;
 	font-weight: inherit;
 }
+.align-center{ text-align: center; }
+.nobr{ white-space: nowrap; }
 /*
 ************************************************************
 ***  If custom font is used globally through css style  ***
@@ -128,6 +130,69 @@ strong em{
 */
 /*------ TYPOGRAPHIC STYLES end ------*/
 
+/*MAIN BLOCKS*/
+.wrapper{
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.header{
+	position: relative;
+	z-index: 5;
+}
+.main{
+	padding: 30px 0 130px;
+	position: relative;
+	clear: both;
+	z-index: 4;
+}
+.main-holder{
+	width: 100%;
+}
+.main-holder:before,
+.main-holder:after { content: ""; display: table; }
+.main-holder:after { clear: both; }
+.content-wrap{
+	float: left;
+	width: 100%;
+}
+.content{
+	margin: 0 120px 0 220px;
+	min-height: 50px;
+}
+.home-page .content{
+	margin: 0;
+	min-height: 50px;
+}
+.sidebar{
+	display: inline;
+	float: left;
+	margin: 0 0 0 -100%;
+	width: 200px;
+}
+.aside{
+	display: inline;
+	float: right;
+	margin: 0 0 0 -100px;
+	width: 100px;
+}
+.footer{
+	margin: -100px auto 0;
+	height: 100px;
+	position: relative;
+	clear: both;
+	z-index: 5;
+}
+.max-wrap{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 5px;
+}
+/*MAIN BLOCKS end*/
+
 /*sp*/
 /*@import url(sp.css);*/
 /*sp end*/
@@ -139,23 +204,22 @@ strong em{
 .btn-default,
 input[type="submit"],
 input[type="button"],
-input[type="reset"],
-button{
+input[type="reset"]{
 	font-size: 16px;
 	line-height: 20px;
 	color: #fff;
 	padding: 12px 25px;
 	border: 1px solid transparent;
 	background: #d32e2e;
-	-webkit-transition: 0.2s;
-	transition: 0.2s;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
 	position: relative;
+	box-sizing: border-box;
 }
 .btn-default:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
-input[type="reset"]:hover,
-button:hover{
+input[type="reset"]:hover{
 	background: #b41e18;
 }
 .btn-default:active{
@@ -219,8 +283,6 @@ button:hover{
 	position: relative;
 	display: inline-block;
 	text-align: left;
-	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
-	font-size: 14px;
 	color: #cf2f09;
 	content: counter(section) ;
 	padding: 0 4px 0 0;
@@ -398,12 +460,6 @@ table th{
 	}
 }
 /*content img end*/
-
-/*aligned content*/
-.align-center{
-	text-align: center;
-}
-/*aligned content end*/
 
 /*elements form style*/
 input[type="text"],
@@ -901,69 +957,6 @@ label{
 }
 /*view print end*/
 /*USER CONTENT end*/
-
-/*MAIN BLOCKS*/
-.wrapper{
-	margin: 0 auto;
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-}
-.header{
-	position: relative;
-	z-index: 5;
-}
-.main{
-	padding: 30px 0 130px;
-	position: relative;
-	clear: both;
-	z-index: 4;
-}
-.main-holder{
-	width: 100%;
-}
-.main-holder:before,
-.main-holder:after { content: ""; display: table; }
-.main-holder:after { clear: both; }
-.content-wrap{
-	float: left;
-	width: 100%;
-}
-.content{
-	margin: 0 120px 0 220px;
-	min-height: 50px;
-}
-.home-page .content{
-	margin: 0;
-	min-height: 50px;
-}
-.sidebar{
-	display: inline;
-	float: left;
-	margin: 0 0 0 -100%;
-	width: 200px;
-}
-.aside{
-	display: inline;
-	float: right;
-	margin: 0 0 0 -100px;
-	width: 100px;
-}
-.footer{
-	margin: -100px auto 0;
-	height: 100px;
-	position: relative;
-	clear: both;
-	z-index: 5;
-}
-.max-wrap{
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 5px;
-}
-/*MAIN BLOCKS end*/
 
 /*HEADER*/
 .header-holder{
