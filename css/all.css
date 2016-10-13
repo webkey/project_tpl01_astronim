@@ -461,7 +461,8 @@ table th{
 }
 /*content img end*/
 
-/*elements form style*/
+/*FORM STYLES*/
+/*form common*/
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -496,7 +497,9 @@ textarea{
 	line-height: 16px;
 	resize: vertical;
 }
-/*placeholder style*/
+/*form common end*/
+
+/*form placeholder*/
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder{ color: #666; transition: 0.2s; -webkit-transition: 0.2s; }
 input:-moz-placeholder,
@@ -507,8 +510,9 @@ input:-ms-input-placeholder,
 textarea:-ms-input-placeholder{ color: #666; opacity: 1; transition: 0.2s; -webkit-transition: 0.2s; }
 input.placeholder,
 textarea.placeholder{ color: #666; opacity: 1; transition: 0.2s; -webkit-transition: 0.2s; }
-/*placeholder style end*/
-/*placeholder hidden*/
+/*form placeholder end*/
+
+/*form placeholder hide*/
 input:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder{ color: transparent !important; }
 input:focus:-moz-placeholder,
@@ -519,7 +523,8 @@ input:focus:-ms-input-placeholder,
 textarea:focus:-ms-input-placeholder{ color: transparent !important; }
 input.placeholder:focus,
 textarea.placeholder:focus{ color: transparent !important; }
-/*placeholder hidden end*/
+/*form placeholder hide end*/
+
 /*form focus*/
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -529,6 +534,7 @@ textarea:focus{
 	box-shadow: inset 0 0 5px #0059a6;
 }
 /*form focus end*/
+
 /*form error*/
 input[type="text"].error,
 input[type="password"].error,
@@ -539,6 +545,9 @@ textarea.error{
 	border-color: #d32e2e;
 	box-shadow: 0 0 5px rgba(211, 46, 46, 0.4);
 }
+/*form error end*/
+
+/*form error placeholder*/
 input.error::-webkit-input-placeholder,
 textarea.error::-webkit-input-placeholder{ color: #d32e2e; }
 input.error:-moz-placeholder,
@@ -549,8 +558,9 @@ input.error:-ms-input-placeholder,
 textarea.error:-ms-input-placeholder{ color: #d32e2e; opacity: 1; }
 input.error .placeholder,
 textarea.error .placeholder{ color: #d32e2e; opacity: 1; }
-/*form error end*/
-/*checkbox*/
+/*form error placeholder end*/
+
+/*form checkbox*/
 input[type="checkbox"]{ width: 16px; height: 16px; padding: 0; margin: 0; }
 input[type="checkbox"] {
 	display:none
@@ -674,8 +684,9 @@ input[type="checkbox"]:disabled + label>span:before,
 input[type="checkbox"]:disabled + label>span:after{
 	background: #b9b9b9;
 }
-/*checkbox end*/
-/*radio*/
+/*form checkbox end*/
+
+/*form radio*/
 input[type="radio"]{ float: left; height: 15px; width: 16px; margin: 0; padding: 0; }
 input[type="radio"] {
 	display:none
@@ -765,8 +776,9 @@ input[type="radio"]:disabled + label>span:after{
 	box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.25);
 	background: #ececec;
 }
-/*radio end*/
-/*form error end*/
+/*form radio end*/
+
+/*form layout*/
 .form-row,
 .input-wrap{ padding: 0 0 28px; }
 .form-row{
@@ -797,7 +809,9 @@ label{
 	vertical-align: top;
 	color: #cf2f09;
 }
-/*select*/
+/*form layout end*/
+
+/*form select*/
 .select{
 	position: relative;
 	margin: 0;
@@ -849,8 +863,8 @@ label{
 	transform: rotate(-45deg);
 	right: 15px;
 }
-/*select end*/
-/*elements form style end*/
+/*form select end*/
+/*FORM STYLE end*/
 
 /*download files items*/
 /*depict files*/
