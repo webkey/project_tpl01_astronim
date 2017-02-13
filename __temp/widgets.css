@@ -59,22 +59,16 @@
 	opacity: 0;
 	filter:Alpha(Opacity=0); /* support: IE8 */
 }
-
 .ui-front {
 	z-index: 100;
 }
-
-
 /* Interaction Cues
 ----------------------------------*/
 .ui-state-disabled {
 	cursor: default !important;
 }
-
-
 /* Icons
 ----------------------------------*/
-
 /* states and images */
 .ui-icon {
 	display: block;
@@ -82,11 +76,8 @@
 	overflow: hidden;
 	background-repeat: no-repeat;
 }
-
-
 /* Misc visuals
 ----------------------------------*/
-
 /* Overlays */
 .ui-widget-overlay {
 	position: fixed;

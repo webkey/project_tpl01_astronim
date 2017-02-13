@@ -1,4 +1,4 @@
-/**!
+/**
  * resize only width
  * */
 var resizeByWidth = true;
@@ -14,7 +14,7 @@ $(window).resize(function () {
 });
 /*resize only width end*/
 
-/**!
+/**
  * device detected
  * */
 var DESKTOP = device.desktop();
@@ -25,7 +25,7 @@ var TABLET = device.tablet();
 //console.log('MOBILE: ', MOBILE);
 /*device detected end*/
 
-/**!
+/**
  *  placeholder
  *  */
 function placeholderInit(){
@@ -33,7 +33,7 @@ function placeholderInit(){
 }
 /*placeholder end*/
 
-/**!
+/**
  * print
  * */
 function printShow() {

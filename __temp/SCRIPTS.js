@@ -905,7 +905,7 @@ $(document).ready(function(){
 
 	//initial function "naveFunction" after loaded all images in "className"
 	$('.className').imagesLoaded( function() {
-		nameFunction();
+		// nameFunction();
 	});
 
 

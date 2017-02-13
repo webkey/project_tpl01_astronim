@@ -11,6 +11,34 @@
 /*@import url(normalize.css);*/
 /*normalize end*/
 
+/* my reset */
+a, input, button,
+a:focus, input:focus, button:focus{
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+	-webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+	outline: none !important;
+}
+body{ -webkit-font-smoothing: antialiased; }
+body, html{ height: 100%; width: 100%; }
+select[disabled]{ cursor: default; }
+form { margin:0; padding:0; }
+input{ vertical-align: middle; }
+textarea, select, input[type="text"], input[type="email"], input[type="search"], input[type="submit"], input[type="button"], input[type="reset"], button{ -webkit-appearance: none; border-radius: 0; }
+input[type=radio], input[type=checkbox], select{ cursor: pointer; }
+textarea, input, button{ -webkit-appearance: none; border-radius: 0; }
+*:focus{ outline: none; -moz-outline: 3px solid #fff !important; }
+input[type="radio"]:focus{ -moz-outline-radius: 12px !important; -moz-outline-offset: 0 !important; }
+input[type="checkbox"]:focus{ -moz-outline-offset: -1px !important; -moz-outline: 1px solid #000 !important; }
+input::-ms-clear { display: none; }
+blockquote, q{ quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: none; }
+ins{ text-decoration: none; }
+del{ text-decoration: line-through; }
+fieldset{ border: none; margin: 0; padding: 0; }
+table{ border: 0; width: 100%; padding: 0; margin: 0; }
+ul{ list-style: none; padding: 0; margin: 0; }
+/* reset end */
+
 /*------ TYPOGRAPHIC STYLES ------*/
 body{
 	font-family: Arial, Helvetica, sans-serif;
@@ -87,7 +115,7 @@ a[href^="fax"],
 	color: inherit;
 	cursor: default;
 }
-a[href^="javascript:"]{ cursor: default; }
+a[href^="javascript:void"]{ cursor: default; }
 img{
 	border: none;
 	vertical-align: top;
@@ -272,7 +300,7 @@ button{
 	border: 2px solid #d32e2e;
 	background: #fff;
 }
-.btn-default-alt:hover{
+.desktop .btn-default-alt:hover{
 	background: #b41e18;
 	color: #fff;
 }
@@ -376,6 +404,12 @@ button{
 /*list end*/
 
 /*default table*/
+.table_auto{
+	overflow: auto;
+	max-width: 100%;
+	-webkit-overflow-scrolling: touch;
+	margin: 0 0 20px;
+}
 table{
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -383,56 +417,53 @@ table{
 }
 table td,
 table th{
-	padding: 8px;
-	border: 1px solid #99bddb;
 	font-size: 14px;
-	line-height: 1.4;
+	line-height: 18px;
+	color: #333;
+	padding: 8px 10px;
+	box-sizing: border-box;
+	border-color: #e6e6e6;
 }
 /*default table end*/
 
 /*table styling*/
-.table_auto{
-	overflow: auto;
-	max-width: 100%;
-	-webkit-overflow-scrolling: touch;
-	margin: 0 0 20px;
-}
-.user-content .tbl{
+.tbl{
 	table-layout: fixed;
-	border: 1px solid #99bddb;
 	margin-bottom: 20px;
 }
 .table_auto .tbl{
 	margin: 0;
 }
-.user-content .tbl td,
-.user-content .tbl th{
-	font: 14px/20px Arial, Helvetica, sans-serif;
-	color: #333;
+.tbl td,
+.tbl th{
+	color: #262626;
 	background-color: #fff;
-	border: solid #99bddb;
-	border-width: 0 0 0 1px;
-	padding: 13px 12px;
+	border: 1px solid #e6e6e6;
+	padding: 8px 10px;
+	font-size: 14px;
+	line-height: 18px;
 }
-.user-content .tbl tbody tr:nth-child(even) td{
-	background: #e5eef6;
+.tbl,
+.tbl td,
+.tbl th{
+	border: 1px solid #e6e6e6;
 }
-.user-content .tbl td:first-child{
+.tbl td:first-child{
 	text-align: left;
 }
-.user-content .tbl tbody td:first-child,
-.user-content .tbl tfoot td:first-child{
+.tbl tbody td:first-child,
+.tbl tfoot td:first-child{
 	border-left-width: 0;
 }
-.user-content .tbl th,
-.user-content .tbl thead td{
-	line-height: 17px;
-	color: #fff;
-	background: #0059a6;
-	padding: 16px 12px 17px;
+.tbl th,
+.tbl thead td{
+	font-weight: bold;
 }
-.user-content .tbl tfoot td{
-	background: #e5eef6;
+.tbl th,
+.tbl thead td,
+.tbl tfoot td,
+.tbl tr td:first-child{
+	background: #f2f2f2;
 }
 /*table styling end*/
 
@@ -816,6 +847,7 @@ input[type="radio"] + span>i:after {
 	animation-iteration-count:1;
 	animation-fill-mode:forwards;
 
+	opacity: 0;
 }
 
 input[type="radio"]:checked + label>span:after,
@@ -825,26 +857,28 @@ input[type="radio"]:checked + span>i:after {
 
 	animation:bounce 0.3s;
 	animation-iteration-count:1;
+
+	opacity: 1;
 }
 
-@-webkit-keyframes bounce {
-	0%  { -webkit-transform:scale(0.8); opacity:0.4}
-	50% { -webkit-transform:scale(1.4); opacity:1}
+@-webkit-keyframes bounce{
+	0% { -webkit-transform:scale(0.8); opacity:0.4}
+	50%{ -webkit-transform:scale(1.4); opacity:1}
 	100%{ -webkit-transform:scale(1); opacity:1}
 }
-@keyframes bounce {
-	0%  { transform:scale(0.8); opacity:0.4}
-	50% { transform:scale(1.4); opacity:1}
+@keyframes bounce{
+	0% { transform:scale(0.8); opacity:0.4}
+	50%{ transform:scale(1.4); opacity:1}
 	100%{ transform:scale(1); opacity:1}
 }
-@-webkit-keyframes bounceout {
-	0%  { -webkit-transform:scale(0); opacity:1;}
-	50% { -webkit-transform:scale(1.4); opacity:1;}
+@-webkit-keyframes bounceout{
+	0% { -webkit-transform:scale(0); opacity:1;}
+	50%{ -webkit-transform:scale(1.4); opacity:1;}
 	100%{ -webkit-transform:scale(0); opacity:0.4;}
 }
-@keyframes bounceout {
-	0%  { transform:scale(0); opacity:1;}
-	50% { transform:scale(1.4); opacity:1;}
+@keyframes bounceout{
+	0% { transform:scale(0); opacity:1;}
+	50%{ transform:scale(1.4); opacity:1;}
 	100%{ transform:scale(0); opacity:0.4;}
 }
 
@@ -1004,7 +1038,7 @@ label{
 	padding-top: 5px;
 	text-decoration: underline;
 }
-.file__title a:hover span{
+.desktop .file__title a:hover span{
 	text-decoration: none;
 }
 .file [class*="depict-files-"]{
@@ -1124,7 +1158,7 @@ label{
 	color: #3262c2;
 	text-decoration: underline;
 }
-.breadcrumbs-list a:hover{
+.desktop .breadcrumbs-list a:hover{
 	text-decoration: none;
 }
 /*breadcrumbs end*/
